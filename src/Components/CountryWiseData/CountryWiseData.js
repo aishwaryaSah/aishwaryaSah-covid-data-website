@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import {Card, CardDeck, OverlayTrigger, Tooltip, Button, Table, Row, Col, Container, CardColumns} from 'react-bootstrap';
-import './WorldData.css';
+import {Card, OverlayTrigger, Tooltip, CardColumns} from 'react-bootstrap';
+import './CountryData.css';
 import { ArrowUp, ArrowDown } from 'react-bootstrap-icons';
 
 class CountryWiseData extends Component{
@@ -11,33 +11,15 @@ class CountryWiseData extends Component{
     super(props);
     this.state = {
       loading: true,
-      today: {},
-      yesterday: {},
-      daybeforeyest: {}
+      today: {}
     }
   }
 
   componentDidMount() {
-    this.fetchInitialData();
-  }
-
-  fetchInitialData = () => {
-    const request = async () => {
-      const response = await fetch('https://disease.sh/v3/covid-19/continents');
-      const today = await response.json();
-      const response1 = await fetch('https://disease.sh/v3/covid-19/continents?yesterday=true');
-      const yesterday = await response1.json();
-      const response2 = await fetch('https://disease.sh/v3/covid-19/continents?yesterday=false&twoDaysAgo=true');
-      const daybeforeyest = await response2.json();
-
-        this.setState({
-          today,
-          yesterday,
-          loading: false,
-          daybeforeyest
-        });
-    }
-    request();
+    this.setState({
+      today: this.props.countryWiseToday,
+      loading:false
+    });
   }
 
   renderTooltip = (props) => (
@@ -66,7 +48,7 @@ class CountryWiseData extends Component{
   incDecCount = (value, posColor="green", negColor="red") => {
     if(value>0){
       return <span className="arrowColor" style={{color:posColor}}><ArrowUp  color={posColor}/> {value}</span>
-    }else if( value==0){
+    }else if( value===0){
       return null;
     }else{
       value=value*-1;
@@ -102,16 +84,19 @@ class CountryWiseData extends Component{
 
   render (){
     if(this.state.loading){
-    return (
-      <h1>loading</h1>
-    );
-  }else{
-    const { today, yesterday, daybeforeyest } = this.state;
-
-  return (<div classNamw="worldDecks">
-        <div className="sectionTitle">Continents Overview</div>
-        {this.getCards(today)}
-      </div>);
+      return (
+        <h1>loading</h1>
+      );
+    } else {
+      const { today} = this.state;
+      return (
+        <div className="worldDecks">
+          <div className="sectionTitle">
+            Continents Overview
+          </div>
+          {this.getCards(today)}
+        </div>
+      );
     }
   }
 }
