@@ -18,26 +18,12 @@ class WorldData extends Component{
   }
 
   componentDidMount() {
-    this.fetchInitialData();
-  }
-
-  fetchInitialData = () => {
-    const request = async () => {
-      const response = await fetch('https://disease.sh/v3/covid-19/all');
-      const today = await response.json();
-      const response1 = await fetch('https://disease.sh/v3/covid-19/all?yesterday=true');
-      const yesterday = await response1.json();
-      const response2 = await fetch('https://disease.sh/v3/covid-19/all?yesterday=false&twoDaysAgo=true');
-      const daybeforeyest = await response2.json();
-
-        this.setState({
-          today,
-          yesterday,
-          loading: false,
-          daybeforeyest
-        });
-    }
-    request();
+    this.setState({
+      today: this.props.worldToday,
+      yesterday: this.props.worldYesterday,
+      daybeforeyest: this.props.worldDayBeforeYest,
+      loading:false
+    });
   }
 
   renderTooltip = (props) => (
@@ -84,7 +70,7 @@ class WorldData extends Component{
     let recoveredDiff = (yesterday.todayDeaths)-daybeforeyest.todayDeaths;
     let deathDiff = (yesterday.todayRecovered)-daybeforeyest.todayRecovered;
 
-return (<div classNamw="worldDecks">
+return (<div className="worldDecks">
       <div className="sectionTitle">World Overview</div>
       <div className="cardsList">
         <CardDeck>
