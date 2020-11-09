@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import './App.css';
+import LandingPage from "./Components/LandingPage/LandingPage";
+import Vaccine from "./Components/Vaccine/Vaccine";
 import CountryWiseData from "./Components/CountryWiseData/CountryWiseData";
-import WorldData from "./Components/WorldData/WorldData";
-import VaccineData from "./Components/VaccineData/VaccineData";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component{
+
   render (){
-    return (
-      <div>
-        <WorldData></WorldData>
-        <CountryWiseData></CountryWiseData>
-        <VaccineData></VaccineData>
-      </div>
-      
-    );
-    // );
+    return <Router>
+      <Switch>
+        <Route exact path="/" component={ LandingPage } />
+        <Route path="/vaccineData"  component={ Vaccine } />
+        <Route path="/CountryWiseData"  component={ CountryWiseData } />
+      </Switch>
+    </Router>
   }
 }
 
