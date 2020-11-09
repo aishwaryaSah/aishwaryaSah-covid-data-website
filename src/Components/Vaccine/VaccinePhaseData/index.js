@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Table} from 'react-bootstrap';
+import Loader from "../../Loading";
 
 class VaccinePhaseData extends Component{
 
@@ -31,11 +32,13 @@ class VaccinePhaseData extends Component{
     let tableData= <Table striped bordered hover responsive>
       <thead>
         <tr>
+          <th>Phase: </th>
           {phaseCount}
          </tr>
        </thead>
        <tbody>
          <tr>
+           <th>Number of Vaccine in that Phase: </th>
            {candidateCount}
          </tr>
         </tbody>
@@ -47,7 +50,7 @@ class VaccinePhaseData extends Component{
     const {loading=true } = this.state;
     if(loading){
       return (
-        <h1>loading</h1>
+        <Loader/>
       );
     }else{
       return (

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Table} from 'react-bootstrap';
-
+import Loader from "../../Loading";
 class VaccineCompleteData extends Component{
 
   constructor(props) {
@@ -65,7 +65,7 @@ class VaccineCompleteData extends Component{
     const {loading=true } = this.state;
     if(loading){
       return (
-        <h1>loading</h1>
+        <Loader/>
       );
     }else{
       return (

@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-// import './App.css';
-import {Link} from "react-router-dom";
 import CountryWiseData from "../CountryWiseData/CountryWiseData";
 import WorldData from "../WorldData/WorldData";
 import {SubHeading} from "../Heading";
-// import SubHeading from "../SubHeading";
+import IndiaOverview from "../IndiaData/IndiaOverview"
 import VaccinePhaseData from "../Vaccine/VaccinePhaseData";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Redirect, Route, Switch } from "react-router-dom";
+import Loader from "../Loading";
 
 class LandingPage extends Component{
 
@@ -19,7 +16,8 @@ class LandingPage extends Component{
       worldYesterday: {},
       worldDayBeforeYest: {},
       countryWiseToday: {},
-      vaccineData: {}
+      vaccineData: {},
+      indiaData: {}
     }
   }
 
@@ -42,6 +40,9 @@ class LandingPage extends Component{
       //Vaccine Data
       const vaccineResponse = await fetch('https://disease.sh/v3/covid-19/vaccine');
       const vaccineData = await vaccineResponse.json();
+      //India Data
+      const indiaResponse = await fetch('https://api.rootnet.in/covid19-in/stats/latest');
+      const indiaData = await indiaResponse.json();
 
         this.setState({
           worldToday,
@@ -49,24 +50,29 @@ class LandingPage extends Component{
           loading: false,
           worldDayBeforeYest,
           countryWiseToday,
-          vaccineData
+          vaccineData,
+          indiaData
         });
     }
     request();
   }
 
   render (){
-    const { worldToday, worldYesterday, worldDayBeforeYest, countryWiseToday, vaccineData, loading} = this.state;
+    const { worldToday, worldYesterday, worldDayBeforeYest, countryWiseToday, vaccineData, loading, indiaData} = this.state;
     if(loading){
       return (
-        <h1>loading</h1>
+        <Loader/>
       );
     } else {
       return (
         <div>
+          <SubHeading title="World Overview"/>
           <WorldData worldToday={worldToday} worldYesterday={worldYesterday} worldDayBeforeYest={worldDayBeforeYest}></WorldData>
+          <SubHeading title="Continents Overview" infoIcon="true" infoText="Click on the continent to know more."/>
           <CountryWiseData countryWiseToday={countryWiseToday}></CountryWiseData>
-          <SubHeading title="Vaccine Phase Details"></SubHeading><Link to="/vaccineData">Components</Link>
+          <SubHeading title="India Overview" linkTo="/indiaData" linkNeeded="true"/>
+          <IndiaOverview indiaData={indiaData.data}></IndiaOverview>
+          <SubHeading title="Vaccine Phase Details" linkTo="/vaccineData" linkNeeded="true"/>
           <VaccinePhaseData vaccineData={vaccineData}></VaccinePhaseData>
         </div>
       );
