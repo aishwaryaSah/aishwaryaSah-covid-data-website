@@ -68,7 +68,7 @@ class LandingPage extends Component{
         <div>
           <SubHeading title="World Overview"/>
           <WorldData worldToday={worldToday} worldYesterday={worldYesterday} worldDayBeforeYest={worldDayBeforeYest}></WorldData>
-          <SubHeading title="Continents Overview" infoIcon="true" infoText="Click on the continent to know more."/>
+          <SubHeading title="Continents Overview" infoIcon="true" infoText="Click on the continent card to know more."/>
           <CountryWiseData countryWiseToday={countryWiseToday}></CountryWiseData>
           <SubHeading title="India Overview" linkTo="/indiaData" linkNeeded="true"/>
           <IndiaOverview indiaData={indiaData.data}></IndiaOverview>

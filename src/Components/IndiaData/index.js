@@ -8,6 +8,7 @@ import IndiaContacts from "../IndiaData/IndiaContacts";
 import IndiaNotification from "../IndiaData/IndiaNotification";
 import Loader from "../Loading";
 import {PageHeading} from "../Heading";
+import { ArrowRight } from 'react-bootstrap-icons';
 import "./styles.css";
 
 class IndiaData extends Component{
@@ -68,7 +69,7 @@ class IndiaData extends Component{
           <Card>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                State Wise Data 
+                State Wise COVID Data <ArrowRight/>
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="0">
@@ -78,7 +79,7 @@ class IndiaData extends Component{
           <Card>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                Beds Available Statewise
+                Beds Availability Details Across India <ArrowRight/>
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="1">
@@ -88,7 +89,7 @@ class IndiaData extends Component{
           <Card>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                Medical Colleges Statewise
+                Medical Colleges Across India with COVID Handling Facilities <ArrowRight/>
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="2">
@@ -97,22 +98,22 @@ class IndiaData extends Component{
           </Card>
           <Card>
             <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                Notifications and advisories
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="3">
-              <Card.Body><IndiaNotification indiaData={indiaNotifData.data}></IndiaNotification></Card.Body>
-            </Accordion.Collapse>
-          </Card>
-          <Card>
-            <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="4">
-                Helpline numbers Statewise
+                COVID Helpline Details <ArrowRight/>
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="4">
               <Card.Body><IndiaContacts indiaData={indiaHelplineData.data}></IndiaContacts></Card.Body>
+            </Accordion.Collapse>
+          </Card>
+          <Card>
+            <Card.Header>
+              <Accordion.Toggle as={Button} variant="link" eventKey="3">
+                COVID related Notification details <ArrowRight/>
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="3">
+              <Card.Body><IndiaNotification indiaData={indiaNotifData.data}></IndiaNotification></Card.Body>
             </Accordion.Collapse>
           </Card>
         </Accordion>

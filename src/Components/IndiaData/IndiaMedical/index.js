@@ -45,12 +45,12 @@ class IndiaMedical extends Component{
         <Table responsive striped bordered hover>
           <thead>
             <tr>
-              <td>state</td>
-              <td>name</td>
-              <td>city</td>
-              <td>ownership</td>
-              <td>admissionCapacity</td>
-              <td>hospitalBeds</td>
+              <td>State</td>
+              <td>Name</td>
+              <td>City</td>
+              <td>Ownership</td>
+              <td>Admission Capacity</td>
+              <td>Hospital Beds</td>
             </tr>
           </thead>
           <tbody>

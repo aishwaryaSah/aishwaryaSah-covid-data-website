@@ -15,6 +15,7 @@
 .textBar .textLine{
   display: block;
   padding-bottom: 15px;
+  word-break: break-word;
 }
 
 .cardFooter{

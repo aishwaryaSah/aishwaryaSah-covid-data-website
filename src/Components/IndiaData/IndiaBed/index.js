@@ -56,10 +56,10 @@ class IndiaBed extends Component{
         <br></br>
         <Table responsive striped bordered hover>
           <tr>
-            <td>ruralHospitals</td>
-            <td>ruralBeds</td>
-            <td>urbanHospitals</td>
-            <td>urbanBeds</td>
+            <td>Rural Hospitals</td>
+            <td>Rural Beds</td>
+            <td>Urban Hospitals</td>
+            <td>Urban Beds</td>
           </tr>
           <tr>
             <td>{summary.ruralHospitals}</td>
@@ -72,13 +72,13 @@ class IndiaBed extends Component{
       <Table responsive striped bordered hover>
         <thead>
           <tr>
-            <td>state</td>
-            <td>totalHospitals</td>
-            <td>totalBeds</td>
-            <td>ruralHospitals</td>
-            <td>ruralBeds</td>
-            <td>urbanHospitals</td>
-            <td>urbanBeds</td>
+            <td>State</td>
+            <td>Total Hospitals</td>
+            <td>Total Beds</td>
+            <td>Rural Hospitals</td>
+            <td>Rural Beds</td>
+            <td>Urban Hospitals</td>
+            <td>u=Urban Beds</td>
           </tr>
         </thead>
         <tbody>
