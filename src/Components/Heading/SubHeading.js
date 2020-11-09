@@ -13,6 +13,9 @@ const SubHeading = function ({ title = "" , infoIcon = "", infoText="", linkNeed
     return <div className="subMainHeading">
         <span className="subHeading">{title}</span>
         {
+            infoIcon && <span className="infoIcon">({infoText})</span>
+        }
+        {/* {
             infoIcon &&
             <OverlayTrigger
                 key={"right"}
@@ -25,7 +28,7 @@ const SubHeading = function ({ title = "" , infoIcon = "", infoText="", linkNeed
             >
                 <span className="infoIcon"><InfoCircle/></span>
             </OverlayTrigger>
-        }
+        } */}
         {
             linkNeeded &&
             <span className="linkNeeded"><Link to={linkTo}>{linkText}</Link></span>

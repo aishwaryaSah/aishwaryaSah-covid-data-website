@@ -39,8 +39,8 @@ class IndiaNotification extends Component{
       <Table responsive striped bordered hover>
         <thead>
           <tr>
-            <td>title</td>
-            <td>link</td>
+            <td>Title</td>
+            <td>Link</td>
           </tr>
         </thead>
         <tbody>

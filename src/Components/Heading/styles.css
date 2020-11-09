@@ -1,20 +1,21 @@
 /* Sub Heading */
 .subHeading{
   padding-top: 1em;
-  padding-left: 1.2em;
   font-size: 30px;
   font-weight: 800;
   font-family: math;
 }
-.infoIcon, .linkNeeded{
-  padding-left:20px;
+.subMainHeading{
+  padding-left: 2.0em;
+  padding-right: 2.0em;
 }
 .linkNeeded{
-  float:right;
-  padding-right: 2em;
+  padding-left:10px;
+  vertical-align: text-bottom;
 }
 .infoIcon{
   margin-bottom: 5px;
+  padding-left:10px;
 }
 .underlineHeading{
   font-size: 25px;
@@ -44,12 +45,7 @@
 }
 .wrapperMainHeading .smallerFont{
   font-size: 15px;
-  text-align: left;
   font-family: math;
-  padding-left: 2em;
-}
-.tdSmallerFont{
-  text-align: initial;
 }
 
 /* Page Heading */

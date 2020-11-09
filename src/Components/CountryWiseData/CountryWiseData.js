@@ -135,9 +135,9 @@ class CountryWiseData extends Component{
             <Card.Title>{user.continent}</Card.Title>
             <Card.Text>
               <span className="textCard">
-                <span>{user.cases}<br></br>Confirmed<br></br>{user.casesPerOneMillion}(/mil)</span>
-                <span>{user.recovered}<br></br>Recovered<br></br>{user.recoveredPerOneMillion}(/mil)</span>
-                <span>{user.deaths}<br></br>Deaths<br></br>{user.deathsPerOneMillion}(/mil)</span>
+                <span className="line">{user.cases}<br></br><span className="red">Confirmed</span><br></br>{user.casesPerOneMillion}(/mil)</span>
+                <span className="line">{user.recovered}<br></br><span className="green">Recovered</span><br></br>{user.recoveredPerOneMillion}(/mil)</span>
+                <span className="line">{user.deaths}<br></br><span className="gray">Deaths</span><br></br>{user.deathsPerOneMillion}(/mil)</span>
               </span>
             </Card.Text>
           </Card.Body>

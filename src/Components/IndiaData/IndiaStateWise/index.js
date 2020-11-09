@@ -42,16 +42,16 @@ class IndiaStateWise extends Component{
 
 
       return <div>
-        <div className="accordianHeading">State Wise Data</div>
+        <div className="accordianHeading">State Wise COVID Data</div>
         <Table responsive striped bordered hover>
           <thead>
             <tr>
               <td>Name</td>
-              <td>totalConfirmed</td>
-              <td>discharged</td>
-              <td>deaths</td>
-              <td>confirmedCasesIndian</td>
-              <td>confirmedCasesForeign</td>
+              <td>Total Confirmed</td>
+              <td>Discharged</td>
+              <td>Deaths</td>
+              <td>Confirmed Cases Indian</td>
+              <td>Confirmed Cases Foreign</td>
             </tr>
           </thead>
           <tbody>

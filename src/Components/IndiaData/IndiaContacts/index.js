@@ -41,12 +41,12 @@ class IndiaContacts extends Component{
         <h3>Goverment Details</h3>
         <Table responsive striped bordered hover>
           <tr>
-            <td>number</td>
-            <td>number-tollfree</td>
-            <td>email</td>
-            <td>twitter</td>
-            <td>facebook</td>
-            <td>media</td>
+            <td>Number</td>
+            <td>Number Tollfree</td>
+            <td>Email</td>
+            <td>Twitter</td>
+            <td>Facebook</td>
+            <td>Media</td>
           </tr>
           <tr>
             <td>{primary.number}</td>
