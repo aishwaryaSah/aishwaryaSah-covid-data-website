@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 // import './App.css';
+import {Link} from "react-router-dom";
 import CountryWiseData from "../CountryWiseData/CountryWiseData";
 import WorldData from "../WorldData/WorldData";
-import VaccineBasic from "../VaccineBasic/VaccineBasic";
+import {SubHeading} from "../Heading";
+// import SubHeading from "../SubHeading";
+import VaccinePhaseData from "../Vaccine/VaccinePhaseData";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Redirect, Route, Switch } from "react-router-dom";
 
@@ -63,7 +66,8 @@ class LandingPage extends Component{
         <div>
           <WorldData worldToday={worldToday} worldYesterday={worldYesterday} worldDayBeforeYest={worldDayBeforeYest}></WorldData>
           <CountryWiseData countryWiseToday={countryWiseToday}></CountryWiseData>
-          <VaccineBasic vaccineData={vaccineData}></VaccineBasic>
+          <SubHeading title="Vaccine Phase Details"></SubHeading><Link to="/vaccineData">Components</Link>
+          <VaccinePhaseData vaccineData={vaccineData}></VaccinePhaseData>
         </div>
       );
     }

@@ -6,20 +6,37 @@
   margin:2em;
 }
 
+/* .circleBar{
+  float:left;
+} */
+/* .textBar{
+  float: right;
+    word-break: break-all;
+    /* position: absolute; */
+    /* width: 70%;
+}
+.textBar .textLine{
+  display: block;
+  padding-bottom: 15px;
+} */
+
+/* .cardFooter{
+  font-size: 12px;
+    
+    float: inherit;
+}  */
 .sectionTitle{
   padding-top: 1em;
-  padding-left: 1.2em;
-  font-size: 30px;
-  font-weight: 800;
-  font-family: math;
+    padding-left: 1.2em;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: math;
 }
-
 .textCard {
   display: table;
   width: 100%;
-  table-layout: fixed;
+  table-layout: fixed;    /* For cells of equal size */
 }
-
 .textCard span {
   display: table-cell;
   text-align: center;
