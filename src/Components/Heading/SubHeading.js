@@ -1,7 +1,5 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import { InfoCircle } from 'react-bootstrap-icons';
-import {OverlayTrigger, Tooltip} from 'react-bootstrap';
 
 const SubHeading = function ({ title = "" , infoIcon = "", infoText="", linkNeeded="", linkTo="", linkText="Read More", underline=""}) {
     
