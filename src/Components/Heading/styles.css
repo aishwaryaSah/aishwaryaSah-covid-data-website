@@ -1,0 +1,70 @@
+/* Sub Heading */
+.subHeading{
+  padding-top: 1em;
+  padding-left: 1.2em;
+  font-size: 30px;
+  font-weight: 800;
+  font-family: math;
+}
+.infoIcon, .linkNeeded{
+  padding-left:20px;
+}
+.linkNeeded{
+  float:right;
+  padding-right: 2em;
+}
+.infoIcon{
+  margin-bottom: 5px;
+}
+.underlineHeading{
+  font-size: 25px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* Constant Heading */
+.mainHeading{
+  padding-top: 1em;
+  padding-left: 1.2em;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: math;
+}
+.wrapperMainHeading{
+  text-align: center;
+  background-color: beige;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1em;
+}
+.wrapperMainHeading table{
+  width: 100%;
+  text-align: center;
+  table-layout: fixed;
+}
+.wrapperMainHeading .smallerFont{
+  font-size: 15px;
+  text-align: left;
+  font-family: math;
+  padding-left: 2em;
+}
+.tdSmallerFont{
+  text-align: initial;
+}
+
+/* Page Heading */
+.pageLinkNeeded{
+  float:left;
+  padding-left: 2em;
+}
+.pageHeading{
+  padding-top: 1em;
+  padding-left: 1.2em;
+  font-size: 30px;
+  font-weight: 800;
+  font-family: math;
+  text-decoration: underline;
+}
+.subPageHeading{
+  text-align: center;
+}

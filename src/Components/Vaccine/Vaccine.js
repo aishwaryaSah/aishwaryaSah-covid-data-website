@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import {MainHeading, SubHeading} from "../Heading";
-// import SubHeading from "..";
+import {PageHeading, SubHeading} from "../Heading";
 import VaccinePhaseData from "./VaccinePhaseData";
 import VaccineCompleteData from "./VaccineCompleteData";
-import {Link} from "react-router-dom";
-
+import Loader from "../Loading";
 class Vaccine extends Component{
 
   constructor(props) {
@@ -36,20 +34,16 @@ class Vaccine extends Component{
     const { vaccineData, loading} = this.state;
     if(loading){
       return (
-        <h1>loading</h1>
+        <Loader/>
       );
     } else {
       return (
         <div>
-          <Link to="/">Back</Link>
-          <MainHeading title="Vaccine Data"></MainHeading>
-          <SubHeading title="Vaccine Phase Details"></SubHeading>
+          <PageHeading title="World COVID Vaccine Details"/>
+          <SubHeading title="Vaccine Phase Details" underline="true"/>
             <VaccinePhaseData vaccineData={vaccineData}></VaccinePhaseData>
-          <SubHeading title="Vaccine Complete Details"></SubHeading>
+          <SubHeading title="Vaccine Complete Details" underline="true"/>
             <VaccineCompleteData vaccineData={vaccineData}></VaccineCompleteData>
-          {/* <WorldData worldToday={worldToday} worldYesterday={worldYesterday} worldDayBeforeYest={worldDayBeforeYest}></WorldData>
-          <CountryWiseData countryWiseToday={countryWiseToday}></CountryWiseData> */}
-          {/* <VaccineBasic vaccineData={vaccineData}></VaccineBasic> */}
         </div>
       );
     }

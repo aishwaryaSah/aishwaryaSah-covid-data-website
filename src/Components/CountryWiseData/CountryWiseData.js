@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import {Card, CardColumns, Table, Modal, Form, Col, Button} from 'react-bootstrap';
+import {Card, CardColumns, Table, Modal, Form, Col} from 'react-bootstrap';
 import './CountryData.css';
+import Loader from "../Loading";
 
 class CountryWiseData extends Component{
 
@@ -26,7 +27,6 @@ class CountryWiseData extends Component{
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.presentCountry !== prevState.presentCountry) {
-      debugger
       const request = async () => {
         const countryWiseResponse = await fetch('https://disease.sh/v3/covid-19/countries/'+this.state.presentCountry);
         const presentCountryToday = await countryWiseResponse.json();
@@ -64,9 +64,9 @@ class CountryWiseData extends Component{
     if(this.state.presentCountry!==""){
       const {countryLoading= true, presentCountryToday={}} = this.state;
       if(countryLoading){
-        return <h1>Loading</h1>
+        return <Loader/>
       } else {
-        return <Table>
+        return <Table responsive striped bordered hover>
           <tr><td>Continent</td><td>{presentCountryToday.continent}</td></tr>
           <tr><td>country</td><td>{presentCountryToday.country}</td></tr>
           <tr><td>population</td><td>{presentCountryToday.population}</td></tr>
@@ -123,9 +123,6 @@ class CountryWiseData extends Component{
           {candidateCount}
         </Form.Control>
       </Col>
-      <Col xs="auto" className="my-1">
-        <Button type="submit">Submit</Button>
-      </Col>
     </Form.Row>
   </Form>
   }
@@ -156,15 +153,12 @@ class CountryWiseData extends Component{
   render (){
     if(this.state.loading){
       return (
-        <h1>loading</h1>
+        <Loader/>
       );
     } else {
       const { today, showModal, continentData} = this.state;
       return (
         <div className="worldDecks">
-          <div className="sectionTitle">
-            Continents Overview
-          </div>
           {this.getCards(today)}
           <Modal
             size="lg"

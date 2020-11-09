@@ -1,9 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import {Card, CardDeck, OverlayTrigger, Tooltip, Button, Table, Row, Col, Container} from 'react-bootstrap';
+import {Card, CardDeck, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import './WorldData.css';
 import { ArrowUp, ArrowDown } from 'react-bootstrap-icons';
+import Loader from "../Loading";
 
 class WorldData extends Component{
 
@@ -36,7 +37,7 @@ class WorldData extends Component{
     return <span>
       <OverlayTrigger
         placement="right"
-        delay={{ show: 250, hide: 400 }}
+        delay={{ show: 0, hide: 0 }}
         overlay={this.renderTooltip()}
       >
         <span>
@@ -52,7 +53,7 @@ class WorldData extends Component{
   incDecCount = (value, posColor="green", negColor="red") => {
     if(value>0){
       return <span className="arrowColor" style={{color:posColor}}><ArrowUp  color={posColor}/> {value}</span>
-    }else if( value==0){
+    }else if( value===0){
       return null;
     }else{
       value=value*-1;
@@ -62,7 +63,7 @@ class WorldData extends Component{
   render (){
     if(this.state.loading){
     return (
-      <h1>loading</h1>
+      <Loader/>
     );
   }else{
     const { today, yesterday, daybeforeyest } = this.state;
@@ -71,7 +72,6 @@ class WorldData extends Component{
     let deathDiff = (yesterday.todayRecovered)-daybeforeyest.todayRecovered;
 
 return (<div className="worldDecks">
-      <div className="sectionTitle">World Overview</div>
       <div className="cardsList">
         <CardDeck>
           <Card>
